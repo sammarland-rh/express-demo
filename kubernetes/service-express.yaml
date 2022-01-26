@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: express-demo-service
+spec:
+  selector:
+    app: express-demo
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 3000

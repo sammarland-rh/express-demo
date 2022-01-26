@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-demo-deployment
+  namespace: express-demo
+spec:
+  selector:
+    matchLabels:
+      app: express-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: express-demo
+        cloud: google
+    spec:
+      containers:
+      - name: express-demo
+        image: quay.io/sammarland_rh/express-demo:latest
+        ports:
+        - containerPort: 3000
+          protocol: TCP

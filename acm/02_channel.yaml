@@ -1,0 +1,9 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: express-demo-channel
+  namespace: express-demo
+spec:
+  pathname: 'https://github.com/sammarland-rh/express-demo.git'
+  type: GitHub
+  

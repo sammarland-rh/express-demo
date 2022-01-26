@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: express-demo-subscription
+  annotations:
+    apps.open-cluster-management.io/github-branch: master
+    apps.open-cluster-management.io/github-path: kubernetes
+  namespace: express-demo
+  labels:
+    app: express-demo
+spec:
+  channel: express-demo/express-demo-placement
+  placement: 
+    placementRef: 
+      kind: PlacementRule
+      name: express-demo-placement
